@@ -1,9 +1,8 @@
 import { buttonVariants } from "@/components/ui/button";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
 import { ArrowRight, Link } from "lucide-react";
-import { cn } from "@/lib/utils";
-// import { image } from "next/image";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 // use text-orange as theme for now
 export default function Home() {
@@ -33,22 +32,25 @@ export default function Home() {
           <ArrowRight className='ml-2 h-5 w-5' /></div>
         </MaxWidthWrapper>
 
-        <div>
-          <div className='mx-auto max-w-6xl px-6 lg:px-8 rounded-3xl'>
-            <div className='mt-16 flow-root sm:mt-24'>
-              <div className='-m-2 rounded-3xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
+        <div className='relative isolate flex items-center justify-center'>
+          <div className='mx-auto max-w-6xl lg: rounded-3xl'>
+            <div className='mt-2 flow-root sm:mt-2 w-full mx-auto'>
+              <div className='-m-2 bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 rounded-2xl lg:p-4 mx-auto'>
                 <Image
                   src='/img.webp'
                   alt='product preview'
-                  width={1364}
-                  height={866}
+                  width={558}
+                  height={390}
                   quality={100}
-                  className='rounded-3xl bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10'/>
+                  style={{ aspectRatio: 1 }}
+                  className='rounded-2xl bg-white p-2 sm:p-8 md:p-8 shadow-2xl ring-1 ring-gray-900/10'
+                />
               </div>
             </div>
           </div>
-          
         </div>
+        
+        <Footer></Footer>
       </>
   )
 }
